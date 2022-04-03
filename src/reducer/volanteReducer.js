@@ -1,5 +1,6 @@
 import { useState,useEffect } from "react";
 import getFactura from '../helpers/getFacturas';
+import getControls from "../helpers/getControls";
 
 const initialFactura=[{
     id:"3fb4a822-3dae-5",
@@ -14,12 +15,11 @@ export default function TraerFacturas(){
     
 
     const facturaUpdate = async()=>{
+       getControls()
+       .then((newControl=>{
+           setFactura({...factura,newControl})
+    }));
        
-       getFactura("")
-        .then((newFactura)=>{
-
-            setFactura({...factura,newFactura})
-        });
     }
 
     useEffect(()=>{
