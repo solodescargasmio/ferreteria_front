@@ -42,6 +42,6 @@ class Conexion extends React.Component{
             </div>
         </div> 
         )
-    }
+    }                                         
 }
 export default Conexion;

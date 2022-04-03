@@ -1,20 +1,20 @@
 import { async } from "@firebase/util";
 
-const getFacturas= async ()=>{
-    const url="http://localhost:8080/factura";
-    const res= await fetch(url);
-    const inventarios = res.json();
-    return inventarios;
-}
-
-
-const getFactura= async (facturaId)=>{
+const getFactura = async (facturaId)=>{
     const url="http://localhost:8080/factura/"+facturaId;
     const res= await fetch(url);
-    const inventario = res.json();
+    const inventario = await res.json();
     return inventario;
+     //inventario;
 }
 
-export { getFactura };
+const getFacturas = async ()=>{
+    const url="http://localhost:8080/factura/";
+    const res= await fetch(url);
+    const inventario = await res.json();
+    return inventario;
+     //inventario;
+}
+export {getFacturas};
 
-export default getFacturas;
+export default getFactura;
