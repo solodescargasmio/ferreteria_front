@@ -10,9 +10,10 @@ import Ruta from './route/index';
 function App() {
   return (
     <div className="div-welcome">
+      <Ruta />
       <img src={Logo} alt="" />
       <h1>Reto final - Client Side</h1>
-      <TraerFacturas />
+      {/* <TraerFacturas /> */}
       {/* <Conexion /> */}
     </div>
   );

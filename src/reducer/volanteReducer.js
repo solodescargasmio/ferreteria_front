@@ -11,7 +11,7 @@ documento:"38765432"
 }]
 
 export default function TraerFacturas(){
-    const [factura,setFactura] = useState([]);
+    const [factura,setFactura] = useState([initialFactura]);
     
 
     const facturaUpdate = async()=>{
@@ -31,7 +31,7 @@ export default function TraerFacturas(){
             <h2>Facturas</h2>
             <h5>ID  :</h5>
                 <ul>
-
+                <li>Mostrar</li>
                 </ul>
                  
 
