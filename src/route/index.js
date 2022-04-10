@@ -6,6 +6,7 @@ import Error404 from "../containers/Error404";
 import Navbar from "../components/Navbar";
 import AgregarProducto from "../containers/AgregarProducto";
 import CrearVolante from "../containers/CrearVolante";
+import AgregarPersona from "../containers/AgregarPersona";
 
 export default function Ruta(){
     return(
@@ -17,6 +18,7 @@ export default function Ruta(){
                     <Route exact path="/register" element={<Register />}>Register</Route>
                     <Route exact path="/volante" element={<CrearVolante />}>Crear Volante</Route>
                     <Route exact path="/producto" element={<AgregarProducto />}>Agregar Producto</Route>
+                    <Route exact path="/persona" element={<AgregarPersona />}>Agregar Persona</Route>
                     <Route path="*" element={<Error404 />}>404 Not Found</Route>
             </Routes>
             

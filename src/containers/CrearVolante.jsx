@@ -37,13 +37,15 @@ const CrearVolante = () => {
             <label htmlFor="formGroupExampleInput2">Maximo</label>
             <input type="text" className="form-control" id="maximo" placeholder="Maximo"/>
         </div>
+        <div className="form-group">
+            <label htmlFor="formGroupExampleInput2">Otra Cosa Para Mostrar</label>
+            <input type="text" className="form-control" id="maximo" placeholder="Otra Cosa"/>
+        </div>
             <div className="form-group">
             <button classname='btn btn-primary'>Enviar</button>
         </div>
     </form>
-    <div>Cart
-        <ProductApp />
-    </div>
+
 </div>
 )
   
