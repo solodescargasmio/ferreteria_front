@@ -27,7 +27,7 @@ const postPersona = (persona) => {
 
 const putPersona=(persona)=>{
 
-fetch(`http://localhost:8080//persona${persona.id}`,{
+fetch(`http://localhost:8080/persona/${persona.id}`,{
     method:'PUT',
     headers:{
         'Accept':'application/json',

@@ -1,6 +1,7 @@
 import React,{ useState } from 'react'
 import { postControl } from '../helpers/postControls'
-import { postPersona } from '../helpers/postPersona';
+import putPersona, { postPersona } from '../helpers/postPersona';
+import deletePersona from '../helpers/deletePersona';
 import jsPDF from 'jspdf';
 
 
@@ -15,11 +16,14 @@ const handleSubmit=(e)=>{
         tipo:e.target.tipo.value
 
     }
+    console.log("Persona "+persona.id)
    // crearPdf(persona);
-    if((e.target.id.value!='undefined')&&(e.target.id.value!='')){alert("Ejecutaste modificar "+e.target.id.value)}
-    else{alert("Ejecutaste enviar "+e.target.id.value)}
-   // postPersona(persona);
-   // alert("Ejecutaste la funcion del servidor")
+    if(typeof e.target.id.value!=='undefined'){
+      putPersona(persona)
+    }
+    else{
+      postPersona(persona)
+    }
 }
 
 function crearPdf(persona){
@@ -51,7 +55,7 @@ const AgregarPersona = () => {
   }
   const [idP,setIdP] = useState("")
 const modificar = (e)=>{
-  
+  deletePersona(idP)
 }
   return (
   <div className='container'>
