@@ -11,9 +11,9 @@ function App() {
       {
         
       
-      !auth.user
-      ?<button type="button" class="login-with-google-btn"  onClick={signInWithGoogle}>Iniciar con Google</button>
-      :<button class="login-with-google-btn" onClick={cerrarSesion}>Cerrar Sesion</button>}
+      auth.user
+      ?<button type="button" className="login-with-google-btn"  onClick={signInWithGoogle}>Iniciar con Google</button>
+      :<button className="login-with-google-btn" onClick={cerrarSesion}>Cerrar Sesion</button>}
       <Ruta />
       <img src={Logo} alt="" />
       <h1>Reto final - Client Side</h1>
