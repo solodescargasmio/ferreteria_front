@@ -14,6 +14,7 @@ const postPersona = (persona) => {
             documento:persona.documento,
             nombre:persona.nombre,
             celular:persona.celular,
+            tipo:persona.tipo,
         })
         
 
@@ -37,6 +38,7 @@ fetch(`http://localhost:8080//persona${persona.id}`,{
         documento:persona.documento,
         nombre:persona.nombre,
         celular:persona.celular,
+        tipo:persona.tipo,
         })
 
 }).then(data => data).catch(error=>console.log("ERROR EN EL PUT CONTROL "+error));

@@ -8,18 +8,18 @@ import jsPDF from 'jspdf';
 const handleSubmit=(e)=>{
   e.preventDefault();
     const persona={
-        //id:e.target.id.value,
+        id:e.target.id.value,
         nombre:e.target.nombre.value,
         documento:e.target.documento.value,
         celular:e.target.celular.value,
         tipo:e.target.tipo.value
 
     }
-    crearPdf(persona);
-    postPersona(persona);
-}
-const modificar = (e)=>{
-  alert("Presionaste modificar"+e.target.value)
+   // crearPdf(persona);
+    if((e.target.id.value!='undefined')&&(e.target.id.value!='')){alert("Ejecutaste modificar "+e.target.id.value)}
+    else{alert("Ejecutaste enviar "+e.target.id.value)}
+   // postPersona(persona);
+   // alert("Ejecutaste la funcion del servidor")
 }
 
 function crearPdf(persona){
@@ -45,10 +45,14 @@ function crearPdf(persona){
 const AgregarPersona = () => {
 
   const [check,setCheck] = useState(false)
-  const [idP,setIdP] = useState("")
+  
   const mostrarNuevo = (e)=>{
     setCheck(e.target.checked)
   }
+  const [idP,setIdP] = useState("")
+const modificar = (e)=>{
+  
+}
   return (
   <div className='container'>
 
@@ -81,10 +85,11 @@ const AgregarPersona = () => {
         <div className="form-group" >
           <div className="form-group">
             <label htmlFor="formGroupExampleInput">ID Persona</label>
-            <input type="text" className="form-control" id="_id" placeholder="ID Persona"/>
+            <input type="text" className="form-control" id="id" placeholder="ID Persona"
+             onChange={(e)=>setIdP(e.target.value)}/>
           </div>
-          <button type="button" onClick={modificar}>Modificar</button>
-          <button type="button" >Eliminar</button>
+          <button className='btn btn-primary'>Modificar</button>
+          <button type="button" onClick={modificar}>Eliminar</button>
         </div>
         :
         <div className="form-group">
